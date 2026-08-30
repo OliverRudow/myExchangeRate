@@ -9,7 +9,7 @@ __copyright__: str = "Copyright 2026, Brain Center Höfen"
 import dataclasses
 import requests
 from requests.exceptions import HTTPError, ConnectionError, Timeout, RequestException
-import myExchangeRateDefinitions
+from myexchangerate import myExchangeRateDefinitions
 
 @dataclasses.dataclass(init=False)
 class MyExchangeRate:
@@ -98,7 +98,7 @@ if __name__ == "__main__":
 
     my_exchange_rate = MyExchangeRate()
     # print(my_exchange_rate.get_exchange_rate("USD"))
-    print(my_exchange_rate.get_exchange_rate("usd"))
+    print(my_exchange_rate.get_exchange_rate("USD"))
 
 
 
