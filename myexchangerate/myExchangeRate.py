@@ -80,6 +80,10 @@ class MyExchangeRate:
 
         if str_quote_currency_identifier:
 
+            if str_quote_currency_identifier.islower():
+
+                str_quote_currency_identifier = str_quote_currency_identifier.upper()
+
             result = next((item for item in self._dict_exchange_data if item.get("quote") == str_quote_currency_identifier), None)
 
             if result is not None:
@@ -98,7 +102,7 @@ if __name__ == "__main__":
 
     my_exchange_rate = MyExchangeRate()
     # print(my_exchange_rate.get_exchange_rate("USD"))
-    print(my_exchange_rate.get_exchange_rate("USD"))
+    print(my_exchange_rate.get_exchange_rate("GBP"))
 
 
 
